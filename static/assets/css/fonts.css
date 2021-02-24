@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/*
+ *:::::::::::::::::::::::::
+ *배민주아체 (안씀, assets에 있는거 씀:: nuxt.config.js)
+ *:::::::::::::::::::::::::
+ */
+@font-face {
+	font-family: 'BMJUA';
+	font-style: normal;
+	font-weight: 400;
+	src: url('~/assets/font/BMJUA.woff2') format('woff2'),
+		url('~/assets/font/BMJUA.woff') format('woff'),
+		url('~/assets/font/BMJUA_ttf.ttf') format('truetype');
+}

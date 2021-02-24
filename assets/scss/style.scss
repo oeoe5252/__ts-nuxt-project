@@ -1,0 +1,38 @@
+@charset "utf-8";
+// 공통 여백
+.pb60 {
+    padding-bottom: 60px !important;
+  }
+// 부모 없는 공통 스타일
+.emp {
+    color: $empColor02;
+  }
+  .txt-y {
+    color: $mainColor01;
+  }
+  .txt-p {
+    color: $mainColor02;
+  }
+  .flex-wrap {
+    @include displayFlex(flex, space-between, flex-end);
+  }
+  .btn-wrap {
+    @include displayFlex(flex, space-evenly, center);
+  }
+  .f-age {
+    @include displayFlex(flex, space-between, center);
+  }
+  .f-target {
+    @include displayFlex(flex, space-between, flex-end);
+  }
+  .f-pri {
+    @include displayFlex(flex, flex-start, center);
+    margin-bottom: 2rem;
+  
+    .input-checkbox {
+      margin-bottom: 0;
+    }
+    [class*='btn-'] {
+      margin-left: 1rem;
+    }
+  }

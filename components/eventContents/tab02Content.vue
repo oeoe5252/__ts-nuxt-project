@@ -1,5 +1,6 @@
 <template>
   <div class="tab-panel-item">
+
     <h2 class="hide">tab02 내용</h2>
     <ImgBox>
         <template #img><img src="@/assets/images/event2/ev2_kv.jpg" alt=""/></template>
@@ -41,6 +42,13 @@
         <template #img><img src="@/assets/images/event2/ev2_ft.jpg" alt=""/></template>
         <template #hide>이미지 설명 추가</template>
     </ImgBox> <!-- (E) footer :: 유의사항 -->
+
+    <!-- <div class="tmp-style-wrap">
+      <buttons icon="true" @click.native="tmpEvent02Modal01 = true"
+        >이벤트2 팝업 일괄</buttons>
+      <buttons icon="true" @click.native="tmpEvent02Modal02 = true"
+        >이벤트2 팝업 득표현황</buttons>
+    </div> (E) TMP :: 모달 확인용 버튼 :: -->
 
     <Modal
       class="tmpEvent02Modal01"
@@ -102,11 +110,7 @@
                 iconType="heart"
                 btnShape="r5"
                 btnColor="pink"
-                @click="
-                  this.sections2.step1 = false
-                  this.sections2.step2 = true
-                "
-                >투푱</VoteButton>
+                @click="tmpClickFunc">투푱</VoteButton>
             </div>
 
             <!-- 게시판 리스트 -->
@@ -231,10 +235,7 @@
           <PopButton
             v-ripple
             btnType="ok"
-            @click="
-              this.sections2.step2 = false
-              this.sections2.step3 = true
-            "
+            @click="tmpClickFunc2"
             >확 인</PopButton>
           <PopButton
             v-ripple
@@ -279,6 +280,25 @@
     @State((state) => state.Test.StoreProducts) tmpTestStoreItems!: any
     
     selectedRegion: string = "전국"
+
+    tmpClickFunc() {
+      this.sections2.step1 = false
+      this.sections2.step2 = true
+
+      this.printUserInfo()
+    }
+
+    tmpClickFunc2() {
+      this.sections2.step2 = false
+      this.sections2.step3 = true
+      
+      this.printUserInfo()
+    }
+
+    printUserInfo() {
+      console.log("event1", this.eventUserInfo.event1);
+      console.log("event2", this.eventUserInfo.event2);
+    }
 
     /**
      * v-model 테스트 
@@ -375,7 +395,7 @@
       this.stepClear()
     }
     
-    // destroyed 될때 지워보기 함수로 만들지 말규
+    // destroyed 될때 지우기 함수로 만들지 말규
     /**
    * 단계 초기화
    */

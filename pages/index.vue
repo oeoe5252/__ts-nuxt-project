@@ -1,14 +1,8 @@
 
 <template>
-  <div class="oe__toy01-hanwoo01">
+  <div class="toy01-hanwoo01">
     <h1 class="hide">Toy01 테스트</h1>
-
-    <!--
-      :::::::::::::::::::::::::::::(update: 21.02.)
-      1. 안된거 많지
-      :::::::::::::::::::::::::::::
-     -->
-
+    
     <!-- 메인탭 -->
     <main-tab-list :items="mainTabItems" @changeTab="changeTab" />
 
@@ -57,11 +51,7 @@ export default class Index extends Vue {
 </script>
 
 <style lang="scss">
-.oe__toy01-hanwoo01 {
-  width: 1024px;
-  min-width: 1024px;
-  margin: auto;
-  text-align: center;
+.toy01-hanwoo01 {
   .store-list-wrap {
     padding: 0 80px;
   }
